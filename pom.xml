@@ -11,10 +11,40 @@
         <relativePath /> <!-- lookup parent from repository -->
     </parent>
 
+    <!--Our microservices pom fies will inherit from this pom-->
     <groupId>guru.springframework</groupId>
     <artifactId>mssc-brewery-bom</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <packaging>pom</packaging>
+
+    <!--overriding stuff from parent pom-->
+    <licenses>
+        <license>
+            <name>My License</name>
+            <url>www.url.com</url>
+        </license>
+    </licenses>
+
+    <organization>
+        <name>nirs org</name>
+        <url>www.nirurl.com</url>
+    </organization>
+
+    <developers>
+        <developer>
+            <name>Nir e</name>
+            <organization>my org</organization>
+        </developer>
+    </developers>
+
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>11</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+    </properties>
 
 </project>
