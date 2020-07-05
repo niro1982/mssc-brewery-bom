@@ -46,6 +46,8 @@
         <awaitility.version>3.1.6</awaitility.version>
     </properties>
 
+    <!--dependencyManagement : used to declare dependencies that this pom is managing their versions under properties-->
+    <!--so if a child pom adds one of these dependencies, it would not need to declare the version-->
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -77,6 +79,9 @@
         </dependencies>
     </dependencyManagement>
 
+<!--    the dependencies here are dependencies that all of our microservers projects are using, so instead of declaring them -->
+    <!--in each project pom, we will only declare them here and the other poms will inherit this pom-->
+    <!--this way, if we want to change a version of a dependency for example, we only need to to it in one place-->
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
