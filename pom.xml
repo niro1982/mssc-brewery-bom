@@ -147,7 +147,7 @@
             </exclusions>
         </dependency>
     </dependencies>
-
+<!--adding build plugins-->
     <build>
         <plugins>
             <plugin>
@@ -157,7 +157,7 @@
             <plugin>
                 <artifactId>maven-clean-plugin</artifactId>
                 <executions>
-                    <execution>
+                    <execution><!--always do clean on initialization. we add it as a goal so not to forget doing clean-->
                         <id>auto-clean</id>
                         <phase>initialize</phase>
                         <goals>
@@ -195,6 +195,8 @@
                 <artifactId>maven-enforcer-plugin</artifactId>
                 <executions>
                     <execution>
+                        <!--adding enforce plugin to put rules to make sure that in this example build will fail if java version != 11-->
+                        <!--maven version needs to be 3.6.0 or higher and only dependencies of released projects and not snapshots versions-->
                         <id>enforce-versions</id>
                         <goals>
                             <goal>enforce</goal>
